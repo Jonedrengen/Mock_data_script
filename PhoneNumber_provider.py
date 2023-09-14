@@ -8,7 +8,7 @@ import random
 class Phone_number:
     def number(self):
         number = random.randint(10000000, 99999999)
-        return number
+        return str(number)
 
 
 #________TO USE THE Phone_number CLASS________

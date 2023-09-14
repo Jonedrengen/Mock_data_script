@@ -11,7 +11,7 @@ class Region_provider(BaseProvider):
         regions = ["Hovedstaden", "Sjælland", "Syddanmark", "Midtjylland", "Nordjylland"]
         # using the random_element() method to choose a random region from the list
         region = self.random_element(regions)
-        return region
+        return str(region)
 
 # ________TO USE THE Region_provider CLASS________
 

@@ -34,7 +34,7 @@ class CPR_provider(BaseProvider): # -> CPRprovider class inherits from BaseProvi
         CPR_number = f"{dob}{gender_digit}{unique_digits}"
         
         # then I return the CPR number
-        return CPR_number
+        return str(CPR_number)
 
 
 # ________TO USE THE CPRprovider CLASS________
@@ -51,3 +51,8 @@ class CPR_provider(BaseProvider): # -> CPRprovider class inherits from BaseProvi
 # -> for ele in range(10):
 # ->     print(fake.cpr())
 
+#testing the class
+fake = Faker()
+fake.add_provider(CPR_provider)
+
+print(fake.cpr())
