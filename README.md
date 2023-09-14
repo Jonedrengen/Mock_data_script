@@ -10,16 +10,16 @@ Importing the necessary libraries, using faker to create mock data
 
 I use anaconda to create my virtual environment
 I use the following command to create my virtual environment
-conda create -n env python=3.11.5
+"conda create -n env python=3.11.5"
 
 i then activate my virtual environment using the following command
-conda activate env
+"conda activate env"
 
 I then install the necessary libraries using the following command
-pip install faker
+"pip install faker"
 
 i check the version of python and the libraries using the following command
-python --version
-pip freeze
+"python --version"
+"pip freeze"
 
 I then create a python script called mock_data.py
