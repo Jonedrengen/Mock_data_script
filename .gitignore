@@ -159,3 +159,10 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 .DS_Store
+
+
+# I am using anaconda to create virtual envs
+# This line ignores the directory where Anaconda might store environment files.
+conda-env/ 
+# This line ignores any directory with the .conda extension, which are usually used by Anaconda to store various data.
+*.conda/
