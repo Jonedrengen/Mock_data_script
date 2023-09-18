@@ -4,5 +4,6 @@
 # make sure you are in the same directory as the requirements.txt file and that you have activated your virtual environment
 python==3.11.4
 Faker==19.6.1
+pyodbc==4.0.39
 python-dateutil==2.8.2
 six==1.16.0

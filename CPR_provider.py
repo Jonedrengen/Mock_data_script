@@ -50,9 +50,3 @@ class CPR_provider(BaseProvider): # -> CPRprovider class inherits from BaseProvi
 # we can also print multiple CPR numbers by using a for loop
 # -> for ele in range(10):
 # ->     print(fake.cpr())
-
-#testing the class
-fake = Faker()
-fake.add_provider(CPR_provider)
-
-print(fake.cpr())
