@@ -37,6 +37,8 @@ class CPR_provider(BaseProvider): # -> CPRprovider class inherits from BaseProvi
         return str(CPR_number)
 
 
+#print(fake.cpr())
+
 # ________TO USE THE CPRprovider CLASS________
 # we create an instance of the Faker class, initializing the faker generator
 # -> fake = Faker()

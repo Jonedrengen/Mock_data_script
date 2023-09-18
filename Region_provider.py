@@ -16,8 +16,10 @@ class Region_provider(BaseProvider):
 # ________TO USE THE Region_provider CLASS________
 
 # we create an instance of the Faker class, initializing the faker generator
-fake = Faker()
-# we then test the Region_provider class by creating an instance of it
-fake.add_provider(Region_provider)
+# -> fake = Faker()
 
-print(fake.region())
+# we then test the Region_provider class by creating an instance of it
+# -> fake.add_provider(Region_provider)
+
+# we can print a single region by calling the region() method
+# -> print(fake.region())

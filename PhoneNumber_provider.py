@@ -6,7 +6,8 @@
 import random
 
 class Phone_number:
-    def number(self):
+    @staticmethod
+    def number():
         number = random.randint(10000000, 99999999)
         return str(number)
 
