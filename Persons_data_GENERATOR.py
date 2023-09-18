@@ -6,7 +6,8 @@ from Gender_provider import gender
 from Region_provider import Region_provider
 from PhoneNumber_provider import Phone_number
 
-#importing the random module
+#importing the random module and csv module
+import csv
 import random
 
 # importing the Faker class from the faker module
@@ -35,6 +36,24 @@ def Persons_data_GENERATOR():
     Persons_tuple = (cpr_number, Gender, Region, Phone_number)
     return Persons_tuple
 
-for ele in range(10): # <- prints 10 tuples of data
-    result = Persons_data_GENERATOR()
-    print(result) 
+def create_csv_file():
+    #to create a csv file, we need to open the file in write mode
+    with open("Persons_data2.csv", "w", newline="") as csvfile:
+        #to create a csv file, we need to create a writer object
+        writer = csv.writer(csvfile)
+        # we then need to write the header row
+        writer.writerow(["CPR", "Gender", "Region", "Phone_number"])
+        # we then create 200 rows of data
+        for ele in range(200):
+            # we then call the Persons_data_GENERATOR() function to generate the data
+            row_data = Persons_data_GENERATOR()
+            #then we write the data to the csv file
+            writer.writerow(row_data)
+
+# calling to create the csv file
+create_csv_file()
+
+# #testing the Persons_data_GENERATOR() function
+# for ele in range(10):
+#     print(Persons_data_GENERATOR())
+
