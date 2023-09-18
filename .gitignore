@@ -166,4 +166,5 @@ cython_debug/
 conda-env/ 
 # This line ignores any directory with the .conda extension, which are usually used by Anaconda to store various data.
 *.conda/
+#vscode generated files that aint needed
 .vscode/settings.json
