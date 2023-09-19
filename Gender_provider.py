@@ -13,13 +13,13 @@ class gender:
     @staticmethod
     def gender_determination(CPR_number):
         # checks the 7'th digit of the CPR number, since that determines the gender of the person
-        gender_digit = int(CPR_number[6])
+        gender_digit = int(CPR_number[9])
 
      # this determines whether the gender digit is even or odd. If the 
         if gender_digit % 2 == 0:
-            return "M"
-        else:
             return "F"
+        else:
+            return "M"
 
 
 

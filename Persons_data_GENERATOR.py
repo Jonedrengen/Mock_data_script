@@ -38,7 +38,7 @@ def Persons_data_GENERATOR():
 
 def create_csv_file():
     #to create a csv file, we need to open the file in write mode
-    with open("Persons_data2.csv", "w", newline="") as csvfile:
+    with open("Persons_data.csv", "w", newline="") as csvfile:
         #to create a csv file, we need to create a writer object
         writer = csv.writer(csvfile)
         # we then need to write the header row
@@ -50,7 +50,7 @@ def create_csv_file():
             #then we write the data to the csv file
             writer.writerow(row_data)
 
-# calling to create the csv file
+# Call the create csv function to create the csv file
 create_csv_file()
 
 # #testing the Persons_data_GENERATOR() function
