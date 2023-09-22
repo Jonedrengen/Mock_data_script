@@ -8,7 +8,6 @@ from PhoneNumber_provider import Phone_number
 
 #importing the random module and csv module
 import csv
-import random
 
 # importing the Faker class from the faker module
 from faker import Faker

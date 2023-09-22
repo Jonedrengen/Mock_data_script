@@ -10,9 +10,11 @@ from faker.providers import BaseProvider
 from CPR_provider import CPR_provider
 
 class gender:
+    # writing @staticmethod above the method, will make it a static method, which means that it can be called without creating an instance of the class
+    # you call it by writing the class name, followed by a dot, and then the method name (see line 31 in Persons_data_GENERATOR.py)
     @staticmethod
     def gender_determination(CPR_number):
-        # checks the 7'th digit of the CPR number, since that determines the gender of the person
+        # checks the 10'th digit of the CPR number, since that determines the gender of the person
         gender_digit = int(CPR_number[9])
 
      # this determines whether the gender digit is even or odd. If the 
