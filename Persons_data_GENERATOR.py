@@ -6,7 +6,7 @@ from Gender_provider import gender
 from Region_provider import Region_provider
 from PhoneNumber_provider import Phone_number
 
-#importing the random module and csv module
+#importing the csv module
 import csv
 
 # importing the Faker class from the faker module
@@ -19,20 +19,22 @@ fake = Faker()
 
 #creating instances of the classes, so I can use the methods from the classes
 CPR_provider_instance = CPR_provider(fake)
+#does not need an instance of faker class, because gender is determined based on the provided cpr number
 Gender_provider_instance = gender()
 Region_provider_instance = Region_provider(fake)
+#does not need an instance of faker class, because the random module is used to get a random phone number
 PhoneNumber_provider_instance = Phone_number()
 
 
 def Persons_data_GENERATOR():
     # Generating random data for the persons table
-    cpr_number = CPR_provider_instance.cpr()
-    Gender = Gender_provider_instance.gender_determination(cpr_number) # <- determines gender based on the cpr number (7th number)
+    cpr = CPR_provider_instance.cpr()
+    Gender = Gender_provider_instance.gender_determination(cpr) # <- determines gender based on the cpr number (7th number)
     Region = Region_provider_instance.region()
     Phone_number = PhoneNumber_provider_instance.number()
 
     #generating a tuple of data
-    Persons_tuple = (cpr_number, Gender, Region, Phone_number)
+    Persons_tuple = (cpr, Gender, Region, Phone_number)
     return Persons_tuple
 
 def create_csv_file():
