@@ -51,10 +51,11 @@ class random_date_provider(BaseProvider):
 class random_host_provider(BaseProvider):
     #self refers to the instance of this class (random_host_provider)
     def create_host(self):
-        fake_hosts = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+        # written like this to make human 70%, Mink 20% and Cow 10%
+        fake_hosts = ["Human", "Human", "Human", "Human", "Human", "Human", "Human", "Mink", "Mink", "Cow"]
         # the random_element method picks any random value from a list, or any other iterable (tuple, set, etc..)
         fake_host = self.random_element(fake_hosts)
-        return "lab " + fake_host
+        return fake_host
 
 
 #___Create random Ct value__________________________________________________________________________________________________________
