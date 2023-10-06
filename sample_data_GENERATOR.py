@@ -96,7 +96,7 @@ def Sample_data_GENERATOR():
     random_CPR = CPR_provider_instance.cpr()
 
     #creating a tuple to store the data, in the correct order matching the database
-    Sample_tuple = (random_uuid, random_CPR, random_date, random_host, random_Ct)
+    Sample_tuple = (random_CPR, random_uuid, random_date, random_host, random_Ct)
     return Sample_tuple
 
 #___creating the Sample_data.csv__________________________________________________________________________________________________________
@@ -109,7 +109,7 @@ def create_csv_file():
         #to create a csv file, we need to create a writer object
         writer = csv.writer(csvfile)
         # we then need to write the header row
-        writer.writerow(["SampleID", "CPR", "SampleDate", "Host", "Ct"])
+        writer.writerow(["CPR", "SampleID", "SampleDate", "Host", "Ct"])
         # we then create 200 rows of data
         for ele in range(200):
             # we then call the Sample_data_GENERATOR() function to create the data
