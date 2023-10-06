@@ -168,3 +168,6 @@ conda-env/
 *.conda/
 #vscode generated files that aint needed
 .vscode/settings.json
+*.json
+*.csv
+*.csv

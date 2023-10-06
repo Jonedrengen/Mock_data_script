@@ -8,3 +8,5 @@
 Faker==19.6.1
 python-dateutil==2.8.2
 six==1.16.0
+
+#should be updated to include the pyodbc library, for connecting to the database
