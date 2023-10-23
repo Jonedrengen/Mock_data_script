@@ -6,7 +6,7 @@ from faker import Faker
 from faker.providers import BaseProvider
 
 #using CPR_provider.py to generate CPR numbers for the sample table
-from Persons_data_GENERATOR import CPR_provider
+from GenPersons import CPR_provider
 
 #create instance of the Faker class, to make use of the faker generator
 fake = Faker()
