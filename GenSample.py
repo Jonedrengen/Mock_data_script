@@ -105,7 +105,7 @@ def Sample_data_GENERATOR():
 
 def create_csv_file():
     #to create a csv file, we need to open the file in write mode
-    with open("Sample_data.csv", "w", newline="") as csvfile:
+    with open("Sample.csv", "w", newline="") as csvfile:
         #to create a csv file, we need to create a writer object
         writer = csv.writer(csvfile)
         # we then need to write the header row
