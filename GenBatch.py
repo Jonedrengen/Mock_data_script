@@ -10,12 +10,12 @@ fake = Faker()
 
 
 # generating a random BatchID in format: Batch-xxxxxx
-# 1 random uppercase letter, 5 random numbers
+# 1 random uppercase letter, x random numbers
 
 class BatchIDProvider(BaseProvider):
     def batch_id(self) -> str:
         rand_let = fake.random_letter().upper()
-        rand_numbers = str(fake.random_number(digits=5)).zfill(5) #zfill() is a method that fills the string with zeros on the left side, until it reaches the specified length
+        rand_numbers = str(fake.random_number(digits=10)).zfill(10) #zfill() is a method that fills the string with zeros on the left side, until it reaches the specified length
         return f'Batch-{rand_let}{rand_numbers}'
 fake.add_provider(BatchIDProvider)
 
