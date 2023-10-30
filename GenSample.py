@@ -118,4 +118,4 @@ def create_csv_file():
             writer.writerow(row_data)
 
 # calling the function to creating the csv file!
-create_csv_file()
+#create_csv_file()

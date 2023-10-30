@@ -39,33 +39,38 @@ class Quality(BaseProvider):
         
 fake.add_provider(Quality)
 
-# Class to generate Organism
-class Organism(BaseProvider):
-    def gen_Organism(self) -> str:
-        return str(random.choice(["Covid", "Legionella", "S.Aureus", "S.Epidermidis"]))
-        
-fake.add_provider(Organism)
+# Class to generate Organism and OrganismID
+class Org_and_OrgID(BaseProvider):
+    organism_map = {
+        "Covid" : "COVID",
+        "Legionella" : "LEGIO",
+        "S.Aureus" : "SAURE",
+        "S.Epidermidis" : "SEPID"
+    }
 
-# Class to generate OrganismID
-class OrganismID(BaseProvider):
-    def gen_OrganismID(self) -> str:
-        choice_prefix = random.choice(["COVID", "LEGIO", "SAURE", "SEPID"])
-        random_letters = "".join(fake.random_letters(length=5)).upper()
-        random_numbers = str(fake.random_number(digits=5)).zfill(5)
-        return f'{choice_prefix}-{random_letters}{random_numbers}'
-        
-fake.add_provider(OrganismID)
+    def gen_Org_and_OrgID(self) -> tuple:
+        # first we find a random organism
+        organism = random.choice(list(self.organism_map.keys())) #getting the key of the dictionary and converting it to a list
+        # then we find the corresponding organismID
+        ID_name = self.organism_map[organism] #getting the value of the key
+
+        Random_letters = "".join(fake.random_letters(length=5)).upper() #generating 5 random letters in upper case
+        Random_numbers = str(fake.random_number(digits=5)).zfill(5) #generating 5 random numbers and filling them with zeros on the left side and converting them to string from int
+
+        organismID = f'{ID_name}-{Random_letters}{Random_numbers}'
+        return organism, organismID
+fake.add_provider(Org_and_OrgID) # add the provider to our faker object
 
 # Function to generate data for the SequencedSample.csv file
+
 def GenSequencedSample() -> tuple:
-    return (
-        fake.seq_sample_id(),
-        fake.SampleContent(),
-        fake.gen_SeqDate(),
-        fake.gen_Quality(),
-        fake.gen_Organism(),
-        fake.gen_OrganismID()
-    )
+    SequencedSampleID = fake.seq_sample_id()
+    SampleContent = fake.SampleContent()
+    SeqDate = fake.gen_SeqDate()
+    Quality = fake.gen_Quality()
+    Organism, OrganismID = fake.gen_Org_and_OrgID()
+    data_tuple = (SequencedSampleID, SampleContent, SeqDate, Quality, Organism, OrganismID)
+    return data_tuple
 
 # Function to generate sequenced samples from the original dataset
 def generate_SequencedSample_csv(sample_file, batch_file, name="SequencedSample.csv"):

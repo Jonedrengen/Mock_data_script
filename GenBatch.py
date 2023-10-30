@@ -85,4 +85,4 @@ def write_batches_to_csv(size=36) -> None:
         for row in generate_batches(size):
             writer.writerow(row)
 
-write_batches_to_csv(12)
+#write_batches_to_csv(12)
