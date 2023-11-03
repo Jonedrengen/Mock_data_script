@@ -97,14 +97,14 @@ fake.add_provider(InfectionLocation_Provider)
 
 # function to create csvfile (tuple created inside)
 
-def create_SEpidermidis_csv(name="Epidermides_data.csv"):
+def create_SEpidermidis_csv(name="Epidermidis_data.csv"):
 
     # getting the Saureus ids
     SepidIDs = fake.SepidID()
 
     with open(name, "w") as csvfile:
         writer = csv.writer(csvfile)
-        writer.writerow(["EpidermidesID", "Genotype", "Disease", "DiseasePhenotype", "DanishLocation", "ForeignLocation", "AcquiredHospital", "AcquiredSurgery", "Infectionlocation"])
+        writer.writerow(["EpidermidisID", "Genotype", "Disease", "DiseasePhenotype", "DanishLocation", "ForeignLocation", "AcquiredHospital", "AcquiredSurgery", "Infectionlocation"])
         for SepidID in SepidIDs:
             Genotype = fake.gen_SepidGenoType()
             Disease = fake.gen_SepidDisease()
