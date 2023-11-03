@@ -23,3 +23,14 @@ i check the version of python and the libraries using the following command
 "pip freeze"
 
 I then create a python script called mock_data.py
+
+
+HOW TO USE ---------- HOW TO USE
+HOW TO USE ---------- HOW TO USE
+HOW TO USE ---------- HOW TO USE
+
+
+1. install requirements.txt
+2. Run GenDataSet.ipynb to generate csv files
+3. Run CSV_to_JSON to translate to json files
+4. Run database_conn to insert into database
