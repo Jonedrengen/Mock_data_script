@@ -25,7 +25,7 @@ fake.add_provider(LegionellaID_Provider)
 #Genotype column
 class LegioGenoType_Provider(BaseProvider):
     def gen_LegioGenoType(self) -> str:
-        Genotypes = ["La", "Lb", "Lb"]
+        Genotypes = ["La", "Lb", "Lc"]
         return random.choice(Genotypes)
 fake.add_provider(LegioGenoType_Provider)
 
