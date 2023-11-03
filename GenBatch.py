@@ -72,8 +72,7 @@ def generate_batches(size=36) -> list: # -> the size parameter is optional, and 
     for date in fake.batch_date(size):
         batch_data.append((fake.batch_id(), date, fake.platform(), fake.batch_source()))
     return batch_data
-result = generate_batches(size=12)
-print(result)
+
 
 
 # writing the data to a csv file

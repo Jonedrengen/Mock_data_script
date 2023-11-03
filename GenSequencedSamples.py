@@ -27,7 +27,7 @@ fake.add_provider(GenSampleContent)
 # Class to generate SequenceDate based on BatchDate
 class SequenceDate(BaseProvider):
     def gen_SeqDate(self):
-        BatchDate = Fetch_column_from_csv("Batch.csv", "BatchDate")
+        BatchDate = Fetch_column_from_csv("Batch_data.csv", "BatchDate")
         return random.choice(BatchDate)
         
 fake.add_provider(SequenceDate)
@@ -85,6 +85,6 @@ def generate_SequencedSample_csv(sample_file, batch_file, name="SequencedSample.
             data_tuple = GenSequencedSample()
             writer.writerow(data_tuple + (sample_ID, random.choice(BatchIDS)))
             
-    print(f'{name} file generated successfully')
+    #print(f'{name} file generated successfully')
 
 #generate_SequencedSample_csv("Sample_data.csv", "Batch.csv", "SequencedSample.csv")

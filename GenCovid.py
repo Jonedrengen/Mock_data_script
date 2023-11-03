@@ -8,7 +8,7 @@ fake = Faker()
 
 #Class for generating covidID, based on the OrganismID column in the SequencedSample_data.csv
 class CovidIDProvider(BaseProvider):
-    def covidID(self):
+    def covidID(self) -> list:
         fetched_IDs = Fetch_column_from_csv("SequencedSample_data.csv", "OrganismID")
         Covid_IDs = [ele for ele in fetched_IDs if ele.startswith("COVID-")] # get all covid IDs
         return Covid_IDs
@@ -52,8 +52,6 @@ fake.add_provider(QCscoreProvider)
 #_______________________________________________________________________________
 
 #generating csv (and tuple of data)
-
-#generating csv file with covid data
 import csv
 from HelperFunctions import * # to get the column with organismIDs from SequencedSample_data.csv
 # here we generate the tuple inside the function and write it to the csv file, because it dont fucking work otherwise

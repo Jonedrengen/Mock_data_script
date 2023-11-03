@@ -45,8 +45,8 @@ class CPR_provider(BaseProvider): # -> CPRprovider class inherits from BaseProvi
         #then create the last 3 digits of the CPR number with the random.randint() method
         unique_digits = random.randint(100, 999)
 
-        # I then create the CPR by combining these 3 variables
-        CPR_number = f"{dob}{gender_digit}{unique_digits}"
+        # then create the CPR by combining these 3 variables
+        CPR_number = f"{dob}{unique_digits}{gender_digit}"
         
         # then I return the CPR number
         return str(CPR_number)
