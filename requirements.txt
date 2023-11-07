@@ -16,6 +16,8 @@ pyodbc==4.0.39
 
 uvicorn==0.23.2
 
+# install fastAPI with conda, if you use anaconda "conda install -c conda-forge fastapi"
 fastapi==0.103.2
+
 
 #anaconda env is env (for Jon to remember)
