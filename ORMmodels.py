@@ -29,7 +29,7 @@ class Persons(Base):
 
     # just a specification on how it should print a person
     def __repr__(self): #function that allows us to specify how we would like to print a person
-        return f"({self.CPR}) {self.Phone_number} {self.Region} {self.Gender}"
+        return f"{self.CPR}, {self.Phone_number}, {self.Region}, {self.Gender}"
     
 
 # Repeat of Persons class

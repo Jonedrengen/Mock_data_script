@@ -28,16 +28,16 @@ Base.metadata.create_all(bind=engine)
 # bind=engine: connect to engine db
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+# functions for getting data from the db
 def get_all_Persons():
     #giving SessionLocal() temp name session
     with SessionLocal() as session: 
         # session.query(Persons): tells SQLAlchemy to prepare a query that will select records from the DB, matching the Persons class
         # all(): return all the results
         return session.query(Persons).all()
-    
+
+
 def get_all_Sample():
     with SessionLocal() as session:
         return session.query(Sample).all()
 
-result = get_all_Sample()
-print(result[:10])
