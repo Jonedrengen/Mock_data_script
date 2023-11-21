@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, ForeignKey, Column, String, Integer, CHAR,
 from sqlalchemy.orm import sessionmaker
 
 #importing Base and mappings from ORMmodels.py
-from ORMmodels import Base, Persons, Sample
+from ORMmodels import Base, Persons, Sample, COVID19, S_aureus, S_epidermidis, SequencedSample, Batch, Legionella
 
 #db stuff to connect with
 server = "localhost"
@@ -41,3 +41,26 @@ def get_all_Sample():
     with SessionLocal() as session:
         return session.query(Sample).all()
 
+def get_all_COVID19():
+    with SessionLocal() as session:
+        return session.query(COVID19).all()
+    
+def get_all_S_aureus():
+    with SessionLocal() as session:
+        return session.query(S_aureus).all()
+    
+def get_all_SequencedSample():
+    with SessionLocal() as session:
+        return session.query(SequencedSample).all()
+    
+def get_all_Batch():
+    with SessionLocal() as session:
+        return session.query(Batch).all()
+    
+def get_all_Legionella():
+    with SessionLocal() as session:
+        return session.query(Legionella).all()
+    
+def get_all_S_epidermidis():
+    with SessionLocal() as session:
+        return session.query(S_epidermidis).all()
