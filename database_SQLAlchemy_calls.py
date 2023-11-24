@@ -1,3 +1,5 @@
+import pyodbc
+
 from sqlalchemy import create_engine, ForeignKey, Column, String, Integer, CHAR, VARCHAR
 from sqlalchemy.orm import sessionmaker
 
@@ -8,8 +10,8 @@ from ORMmodels import Base, Persons, Sample, COVID19, S_aureus, S_epidermidis, S
 server = "localhost"
 database = "mydb"
 username = "sa"
-password = r'N\VHs8*DJV' # bad practice - but only for testing
-driver = "/opt/homebrew/lib/libmsodbcsql.18.dylib" # direct location, because for some reason the standard does not work for me
+password = "Slotved2314!" # bad practice - but only for testing
+driver = "ODBC Driver 18 for SQL Server" # direct location, because for some reason the standard does not work for me
 connection_string = f"mssql+pyodbc://{username}:{password}@{server}/{database}?driver={driver}&TrustServerCertificate=yes"
 
 #Creating the engine, that needs the DB specifications. It uses the connections string to determine the spcifics of the DB (such as db type, like mssql, SQLServer or whatever)

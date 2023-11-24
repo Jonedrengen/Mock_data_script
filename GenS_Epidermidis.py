@@ -68,6 +68,7 @@ fake.add_provider(SepidLocation_Provider)
 # Aquired hospital class 
 
 class AquiredHospital_Provider(BaseProvider):
+
     def gen_hospital(self) -> str:
         hospital = random.choice(["HosA", "HosB", "ForeignHos"])
         return hospital

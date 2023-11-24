@@ -1,13 +1,15 @@
-#requests is for handling api requests (direct access to the api in the browser )
-#import requests
-# GET request: asking the webserver i made for some information
-#print(requests.get("http://127.0.0.1:8000/items/1").json())
-# use & for multiple requests
-#print(requests.get("http://127.0.0.1:8000/items?name=Hammer&price=9.99&count=4&category=tools").json())
+import pyodbc
+#w
+server = 'localhost'
+database = 'mydb'
+username = 'sa'
+password = 'Slotved2314!' 
+# direct path: "/opt/homebrew/lib/libmsodbcsql.18.dylib"
+driver ='{ODBC Driver 18 for SQL Server}'
+#connection_string = r'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password};TrustServerCertificate=yes'.format(driver=driver, server=server, database=database, username=username, password=password)
+#driver = '/opt/homebrew/lib/libmsodbcsql.18.dylib'
+print(pyodbc.drivers())
+connection_string = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password};TrustServerCertificate=yes'
+conn = pyodbc.connect(connection_string)
+#print("Connected successfully")
 
-import os
-from dotenv import load_dotenv
-load_dotenv()  # This loads the variables from .env into the environment
-
-print("Current Working Directory:", os.getcwd())
-print("DATABASE_PASSWORD:", os.getenv('DATABASE_PASSWORD'))

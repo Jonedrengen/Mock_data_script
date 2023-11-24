@@ -86,7 +86,7 @@ class Legionella(Base):
     DiseasePhenotype = Column("DiseasePhenotype", NVARCHAR(4000), nullable=True)
     DanishLocation = Column("DanishLocation", NVARCHAR(4000), nullable=True)
     ForeignLocation = Column("ForeignLocation", NVARCHAR(4000), nullable=True)
-    AcquiredFood = Column("AqcuiredFood", NVARCHAR(100), nullable=True)
+    AcquiredFood = Column("AcquiredFood", NVARCHAR(100), nullable=True)
 
     def __init__(self, LegionellaID, Genotype=None, Disease=None, DiseasePhenotype=None, DanishLocation=None, ForeignLocation=None, AcquiredFood=None):
         self.LegionellaID = LegionellaID
