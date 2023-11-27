@@ -1,13 +1,9 @@
-import pyodbc
 
 # Import Union from the typing module to allow for type hints that can accept multiple types (basically a parameter can be multiple datatypes, when passing)
 from typing import Union
 
 # for creating the api and handling HTTPExceptions
 from fastapi import FastAPI, HTTPException
-
-# for validation of data
-from pydantic import BaseModel
 
 # importing the db engine created with SQLAlchemy
 from database_SQLAlchemy_calls import engine, get_all_Batch, get_all_COVID19, get_all_Legionella, get_all_Persons, get_all_S_aureus, get_all_S_epidermidis, get_all_Sample, get_all_SequencedSample
@@ -35,6 +31,9 @@ def get_db():
         # no matter if the try block or except block runs, the db will be closed for ressource management
         db.close()
 
+#class data_type(BaseModel):
+
+
 
 #I decide to use split sessions here because of its simplicity
 #using a single session might be better for data integrity (ask GPT if you dont understand)
@@ -50,6 +49,16 @@ def read_data() -> dict:
     Sequence_data = get_all_SequencedSample()
     return {'persons' : Person_data, 'batch' : Batch_data, 'sample' : Sample_data, 'covid' : Covid_data,
             'legio' : Legio_data, 'areus' : Areus_data, 'epidermidis' : Epider_data, 'sequence' : Sequence_data}
+
+# All the output here is sent to http://127.0.0.1:8000/fakedata
+
+
+
+
+@app.get("/Persons")
+def read_Persons_data():
+    Persons_data = get_all_Persons()
+    return Persons_data
 
 #result = read_data()
 #print(type(result)) -> dict
