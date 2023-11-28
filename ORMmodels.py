@@ -2,6 +2,11 @@ from sqlalchemy import create_engine, ForeignKey, Column, String, Integer, CHAR,
 from sqlalchemy.ext.declarative import declarative_base
 # for describing relationships
 from sqlalchemy.orm import relationship
+
+#Pydantic models: used to define response and requests data in the API
+#ORM models: used to directly interact with the database (querying)
+
+
 #creating a Base class for declerative class definitions. 
 #this Base class will serve as a foundation for all ORM mappings to database tables.
 #it allows us to define classes in a way that SQLAlchemy can interpret and translate into database tables.

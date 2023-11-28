@@ -55,7 +55,7 @@ def read_data() -> dict:
 
 
 
-@app.get("/Persons")
+@app.get("/persons", response_model=None)
 def read_Persons_data():
     Persons_data = get_all_Persons()
     return Persons_data
