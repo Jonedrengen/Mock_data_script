@@ -30,7 +30,7 @@ HOW TO USE ---------- HOW TO USE
 HOW TO USE ---------- HOW TO USE
 
 
-1. install requirements.txt
+1. install requirements.txt (remember to create new environment)
 2. Run GenDataSet.ipynb to generate csv files
 3. Run CSV_to_JSON to translate to json files
 4. Run database_conn to insert into database
